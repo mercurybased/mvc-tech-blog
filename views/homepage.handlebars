@@ -1,13 +1,6 @@
-<!-- Loop over each user object -->
-{{#each users as |user| }}
-<div class="row align-center mb-5">
-  <div class="col-md-6">
-    <!-- Render user-specific data with Handlebars.js expressions -->
-    <h2>{{user.name}}</h2>
-  </div>
-  <div class="col-md-6">
-    <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
-  </div>
-</div>
+<h1>Homepage!</h1>
+{{#each allPosts}}
+    <h3>{{name}} by {{user.name}}</h3>
+    <p>{{description}}</p>
+    <hr>
 {{/each}}
-<p>Hello World</p>

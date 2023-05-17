@@ -1,7 +1,22 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
 
+router.get('/', async (req,res) => {
+  try {
+    const postData = await postData.findAll()
+    res.status(200).json(postData)
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err)
+  }
+})
+
+
 router.post('/', async (req, res) => {
+  console.log("test")
+  if(!req.session.logged_in){
+    return res.status(403).json({msg:"login first!"})
+  }
   try {
     const newPost = await Post.create({
       ...req.body,
@@ -15,6 +30,9 @@ router.post('/', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
+  if(!req.session.logged_in){
+    return res.status(403).json({msg:"login first!"})
+  }
   try {
     const postData = await Post.destroy({
       where: {

@@ -1,0 +1,113 @@
+<div class="row">
+    <!-- left column -->
+    <div class="col">
+        {{!-- left column details --}}
+        <div class="row">
+            <div class="col">
+                <img src="../Assets/chingu_logo.png" class="w-100" alt="logo picture">
+            </div>
+            <div class="col" style="display:flexbox; text-align:center;">
+                <h2 class="mt-0 home" style="width:100%; height: 50px;">ChinguTalk</h2>
+
+                <p id="button" aria-describedby="tooltip">It's
+                    dangerous to go alone... use this!
+                </p>
+
+                <div class="mt-0 home" id="tooltip" role="tooltip" style="flex-wrap:wrap">
+                    <h2>
+                        Chingu is the korean word for friends
+                    </h2>
+                    <p>
+                        Whether you are in a new location and want to connect with someone or your friends
+                        aren’t free you can connect with companions to accompany you on local outings or online
+                        friends for your next Monster Hunter raid because you can’t kill Almudron by yourself.
+                    </p>
+
+                    <div id="arrow" data-popper-arrow></div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- right column -->
+    <div class="col">
+        <div class="card m-6" style="background-color:#BEB4AA; height:100%; align-items:center;">
+            <div class="card-header"
+                style="font-family: 'Libre Baskerville';  font-size: 25px;  letter-spacing: 6px;  color: var(--txt-dark-brown);">
+                Sign Up</div>
+            <div class="card-body">
+                <form id="login-form">
+                    <div class="row">
+                        <div class="col-auto">
+                            <input type="text" class="form-control" id="first-name" placeholder="first name"
+                                aria-label="First name" value={{firstName}}>
+                        </div>
+
+                        <div class="col-auto">
+                            <input type="text" name="last-name" id="last-name" class="form-control"
+                                placeholder="Last name" aria-label="last name" value={{lastName}}>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label"> </label>
+                        <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com" value={{email}}>
+                    </div>
+                    {{!-- <div class="row g-3 align-items-center"> --}}
+                    <div class="col-auto">
+                        {{!-- <label for="inputPassword6" class="col-form-label">Password</label> --}}
+                    </div>
+                    <div class="col-auto">
+                        <input type="password" id="inputPassword6" class="form-control"
+                            aria-labelledby="passwordHelpInline" placeholder="password" value={{password}}>
+                    </div>
+                    <div class="col-auto">
+                        <span id="passwordHelpInline" class="form-text">
+                            Must be 8-20 characters long.
+                        </span>
+                    </div>
+                    <div class="col-auto">
+                        <label for="biographyform" class="'form-bio"></label>
+                        <input type="biography" id="biography" class="form-control text-wrap" placeholder="Add a Bio"
+                            value={{bio}}>
+                    </div>
+
+                    <div>
+                        <label for="exampleFormControlInput1" class="form-label"> </label>
+                    </div>
+
+
+                    <button id="upload_widget" class="btn btn-outline-light" type="button">Add a profile
+                        picture</button>
+                    <div>
+                        <label for="exampleDataList" class="form-label text-wrap">Search for an interest</label>
+                        <input class="form-control" name="interest" list="datalistOptions" id="interests"
+                            placeholder="interests">
+                        <datalist id="datalistOptions">
+                            <option value="Cats">
+                            <option value="Tennis">
+                            <option value="Skateboarding">
+                            <option value="Video Games">
+                            <option value="Boba">
+                        </datalist>
+                    </div>
+            </div>
+
+
+            <label for="exampleFormControlInput1" class="form-label"> </label>
+            <div id="liveAlertPlaceholder"></div>
+            <button type="submit" class="btn btn-outline-light text-wrap" id="liveAlertBtn"
+                style="border: solid 2px #fff;">Complete Sign Up</button>
+
+            </form>
+            <p><a href="/login"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover text-wrap">Already
+                    have an account?</a></p>
+        </div>
+    </div>
+</div>
+</div>
+<script src="/js/login.js"></script>
