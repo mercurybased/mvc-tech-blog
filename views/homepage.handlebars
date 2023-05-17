@@ -1,6 +1,13 @@
 <h1>Homepage!</h1>
 {{#each allPosts}}
-    <h3>{{name}} by {{user.name}}</h3>
-    <p>{{description}}</p>
+    <h3>{{title}} by {{user.username}}</h3>
+    <p>{{body}}</p>
+    <p class="user_id" id="{{id}}">{{user.id}}</p>
+    <form class="comment-form">
+    <textarea id="comment" placeholder="comment"></textarea>
+    <button data-proj-id={{id}}>leave a comment</button>
+</form>
+    
     <hr>
 {{/each}}
+<script src="/js/comment.js"></script>

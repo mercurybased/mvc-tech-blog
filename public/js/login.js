@@ -5,6 +5,7 @@ loginForm.addEventListener("submit",e=>{
     const userObj = {
         email:document.querySelector("#login-email").value,
         password:document.querySelector("#login-password").value,
+        username:document.querySelector("#signup-username").value,
     }
     console.log(userObj)
     fetch("/api/users/login",{
@@ -27,7 +28,7 @@ signupForm.addEventListener("submit",e=>{
     e.preventDefault();
     const userObj = {
         email:document.querySelector("#signup-email").value,
-        name:document.querySelector("#signup-username").value,
+        username:document.querySelector("#signup-username").value,
         password:document.querySelector("#signup-password").value,
     }
     fetch("/api/users",{
@@ -40,6 +41,7 @@ signupForm.addEventListener("submit",e=>{
         if(res.ok){
            location.href = "/"
         } else {
+          console.log(res)
             alert("trumpet sound")
         }
     })
