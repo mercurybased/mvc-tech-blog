@@ -20,7 +20,7 @@ This application is for all the developers of the world to make entires about te
 
 ## Usage
  Simply go to the link below to create an account and start posting and commenting on other users posts!
- https://git.heroku.com/annas-tech-blog.git
+https://annas-tech-blog.herokuapp.com/
 
 
 ## Credits
