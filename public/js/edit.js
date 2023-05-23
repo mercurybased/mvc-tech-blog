@@ -1,20 +1,22 @@
 //front end creating new blog post
 document.querySelector("form").addEventListener("submit",e=>{
     e.preventDefault();
+    const id = parseInt(document.querySelector('#post-id').value)
     const postObj = {
         title:document.querySelector("#name").value,
         body:document.querySelector("#blog-post").value,
+        id
     }
     console.log(postObj)
-    fetch("/api/posts",{
-        method:"POST",
+    fetch(`/api/posts/${id}/edit`,{
+        method:"PUT",
         body:JSON.stringify(postObj),
         headers:{
             "Content-Type":"application/json"
         }
     }).then(res=>{
         if(res.ok){
-           location.reload()
+           window.location.href = '/profile'
         } else {
             alert("error!")
         }

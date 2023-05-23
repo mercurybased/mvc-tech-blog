@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { User, Post } = require('../../models');
 
 router.get('/', async (req,res) => {
   try {
@@ -11,7 +11,6 @@ router.get('/', async (req,res) => {
   }
 })
 
-
 router.post('/', async (req, res) => {
   console.log("test")
   if(!req.session.logged_in){
@@ -22,12 +21,29 @@ router.post('/', async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     });
-
+    
     res.status(200).json(newPost);
   } catch (err) {
     res.status(400).json(err);
   }
 });
+
+router.put("/:id/edit", (req, res) => {
+  Post.update(req.body,{
+    where: {
+      id: req.params.id
+    },
+    include: [User],
+  }).then((projData) => {
+    console.log(projData)
+    // const hbsData = projData.get({ plain: true });
+    // hbsData.logged_id = req.session.logged_id;
+    // console.log(hbsData);
+    // res.render("editPost", hbsData);
+    res.status(200).end()
+  });
+});
+
 
 router.delete('/:id', async (req, res) => {
   if(!req.session.logged_in){

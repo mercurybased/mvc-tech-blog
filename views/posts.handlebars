@@ -1,0 +1,18 @@
+<h3>Blog Posts</h3>
+    <h3>{{title}} by {{user.username}}</h3>
+    <p>{{body}}</p>
+    <p class="user_id" id="{{id}}">{{user_id}}</p>
+    <a href="/posts/{{id}}/comments">leave a comment</a>
+    <form class="comment-form">
+    <input type="hidden" id="post-id" value="{{id}}">
+    <textarea class="comment-input" placeholder="comment"></textarea>
+    <button class="comment-submit" data-proj-id={{id}}>leave a comment</button>
+</form>
+    <hr>
+    {{#each comments}}
+    <p>{{body}} by {{user.username}}</p>
+    <button class="delete-comment" type="button" data-post-id={{id}}>delete</button>
+    <hr>
+    {{/each}}
+    
+<script src="/js/comment.js"></script>

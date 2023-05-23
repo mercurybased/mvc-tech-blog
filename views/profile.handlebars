@@ -1,18 +1,21 @@
-<h2>{{user}}'s page</h2>
+<h2>{{username}}'s page</h2>
 <h3>Posts</h3>
 {{#each posts}}
     <h3>{{title}} </h3>
     <p>{{body}}</p>
+    <p>Date: {{date_created}}</p>
     <button class="del-btn" data-proj-id={{id}}>Delete me!</button>
     <hr>
 {{/each}}
 
 <h3>Add a new Post</h3>
 <form>
-    <input type="text" id="name" placeholder="name">
+    <input type="text" id="name" placeholder="title">
     <textarea id="blog-post" placeholder="blog post"></textarea>
     <button>Add a Post</button>
 </form>
+
+
 
 <script src="/js/profile.js"></script>
 <script src="/js/logout.js"></script>

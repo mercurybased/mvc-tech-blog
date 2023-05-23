@@ -20,7 +20,7 @@ Comment.init(
       }
     },
     body: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -30,10 +30,11 @@ Comment.init(
         key:"id"
       }
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
     },
   {
     sequelize,

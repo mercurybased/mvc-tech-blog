@@ -1,13 +1,15 @@
 <h1>Homepage!</h1>
+<h3>Blog Posts</h3>
 {{#each allPosts}}
     <h3>{{title}} by {{user.username}}</h3>
     <p>{{body}}</p>
     <p class="user_id" id="{{id}}">{{user.id}}</p>
-    <form class="comment-form">
-    <textarea id="comment" placeholder="comment"></textarea>
-    <button data-proj-id={{id}}>leave a comment</button>
-</form>
-    
+    <a href="/posts/{{id}}/comments">leave a comment</a>    
+
+    {{#if logged_in}}
+    <a href="/posts/{{id}}/edit">edit post</a>
+    {{/if}}
+    {{/each}}
     <hr>
-{{/each}}
+
 <script src="/js/comment.js"></script>
